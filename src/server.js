@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const path = require('path');
 const conexao = require('./config/database');
 const produtosRoutes = require('./routes/produtos');
 
@@ -10,12 +11,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.status(200).json({
-        mensagem: 'API de Gerenciamento de Produtos funcionando!'
-    });
-});
+// MOSTRAR O SITE
+app.use(express.static(path.join(__dirname, '../public')));
 
+// TESTAR CONEXÃO COM MARIADB
 app.get('/teste-banco', async (req, res) => {
     try {
         const [resultado] = await conexao.query(
@@ -36,8 +35,10 @@ app.get('/teste-banco', async (req, res) => {
     }
 });
 
+// ROTAS DOS PRODUTOS
 app.use('/produtos', produtosRoutes);
 
+// INICIAR SERVIDOR
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

@@ -1,0 +1,224 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* CABEÇALHO */
+header {
+    background: linear-gradient(135deg, #0f172a, #1e40af);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+/* CONTEÚDO */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* SEÇÕES */
+section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+h2 {
+    color: #172554;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+/* FORMULÁRIO */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 15px;
+    background: #f8fafc;
+    color: #1e293b;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+/* BOTÕES */
+button {
+    padding: 13px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+form button {
+    grid-column: span 2;
+    background: #1d4ed8;
+    font-size: 16px;
+    padding: 15px;
+}
+
+/* PESQUISA */
+#pesquisa {
+    margin-bottom: 22px;
+    background: #f8fafc;
+}
+
+/* LISTA DE PRODUTOS */
+#listaProdutos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    transition: 0.2s;
+}
+
+.produto:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.08);
+}
+
+.produto h3 {
+    color: #172554;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.produto p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* AÇÕES */
+.acoes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.editar {
+    background: #d97706;
+}
+
+.editar:hover {
+    background: #b45309;
+}
+
+.excluir {
+    background: #dc2626;
+}
+
+.excluir:hover {
+    background: #b91c1c;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    form button {
+        grid-column: span 1;
+    }
+
+    .produto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acoes {
+        width: 100%;
+    }
+
+    .acoes button {
+        flex: 1;
+    }
+}
