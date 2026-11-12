@@ -1,0 +1,18 @@
+{
+  "name": "api-gerenciamento-produtos",
+  "version": "1.0.0",
+  "description": "API REST para gerenciamento de produtos de uma loja",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
